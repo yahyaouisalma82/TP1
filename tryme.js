@@ -1,0 +1,1 @@
+let ok=document.prompt("saisir un nombre aleaé")

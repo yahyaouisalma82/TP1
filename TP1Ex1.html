@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Play </title>
+
+    </head>
+    <body>
+        <h3> Let's play a little bit</h3>
+        <script>
+            let diff=prompt("saisir le niveau de difficulte [1,2,3]");
+           // var randomNumber =function hey(){ return Math.floor(Math.random()*11);}
+           // function hey(){ return (Math.random()*11);}
+            var randomNumber =Math.round(Math.random()*11);
+            for(var i=1; i<=4-diff;i++){
+                let tentative=prompt("saisir un nombre aleatoire");
+                if(tentative==randomNumber){
+                   alert("Vous avez gagne");
+                   break;
+                }
+                else
+                   alert("choix mauvais");
+            }
+            if(i==5-diff){
+                alert("Vous avez echoué :( La reponse correcte est "+randomNumber);
+
+            }
+        </script>
+    </body>
+</html>

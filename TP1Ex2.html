@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Mise en Page
+    </title>
+</head>
+
+<body>
+    <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aliquam iure unde iste magnam neque repudiandae, cumque atque? Dolore, ipsam pariatur in excepturi totam magni distinctio nam delectus cum magnam?</p><br>
+    <input name="color" maxlenth=15 size=30 id="coloring" type="color" value="#a25b93">
+    <input name="number" size=15 type="color" id="taille" >
+    <select name="police" id="police"  maxlenth=15>
+        <option value="ar" size=15> arial</option>
+        <option value="ver" size=15> verdana</option>
+        <option value="gr"> garamond</option>
+    </select>
+    <script>
+        var coloring= document.querySelector("#coloring");
+        coloring.addEventListener("input", updateFirst, false);
+       
+        function updateFirst(event) {
+            var p = document.querySelector("p");
+
+            if (p) {
+                p.style.color = event.target.value;
+            }
+        }
+        var taille=document.querySelector("#taille");
+        taille.addEventListener("input",changeSize,false);
+        function changeSize(event){
+            var p = document.querySelector("p");
+            if (p) {
+                p.style.fontSize = event.target.value;
+            }
+        }
+        var police= document.querySelector("#police");
+        coloring.addEventListener("input", changeFont, false);
+       
+        function changeFont(event) {
+            var p = document.querySelector("p");
+
+            if (p) {
+                p.style.font = event.target.value;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
