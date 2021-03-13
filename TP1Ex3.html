@@ -7,16 +7,41 @@
 
 <body>
     <div id="container" style="width:100%;">
-        <div id="left" style="float:left; width:50%;">  </div>
-        <div id="right" style="float:right; width:50%;"> 
+
+        <div id="right" style="float:right; width:50%;">
             <label name="nom">name:</label><br>
-            <input type="text" size=15 maxlenth=20 id="nom"><br>
+            <input type="text" id="myInput" placeholder="write name" maxlength="160"><br>
             <label name="content">content:</label><br>
-            <input type="text" size=15 maxlenth=20 id="content">
-            <INPUT TYPE="submit" VALUE="TODO">
+            <input type="text" id="content" placeholder="write content" size=15 maxlenth=20 id="content">
+            <div id="buttons">
+                <button type="button" class="addBtn" onclick="newElement()">TODO</button>
+            </div>
         </div>
+        <div id="left" style="float:left; width:50%;">
+            
+        </div>
+
     </div>
 
+    <script>
+        function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("myInput").value;
+            var inputContent = document.getElementById("content").value;
+            var t = document.createTextNode(inputValue+": "+inputContent);
+            li.appendChild(t);
+            if ((inputValue === '') || (inputContent === '') ){
+                alert("You must write something!");
+            } else {
+                document.getElementById("left").appendChild(li);
+            }
+            document.getElementById("myInput").value = "";
+            document.getElementById("content").value = "";
+
+        
+        }
+
+    </script>
 </body>
 
 </html>
